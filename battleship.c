@@ -6,6 +6,7 @@ Battleship Program
 #include <stdio.h>
 #include <string.h>
 
+
 //macro
 #define FLUSH_STDIN(x) {if(x[strlen(x)-1]!='\n'){do fgets(Junk,16,stdin);while(Junk[strlen(Junk)-1]!='\n');}else x[strlen(x)-1]='\0';}
 
@@ -13,6 +14,10 @@ Battleship Program
 const int ROWS = 10;
 const int COLS = 10;
 const int NAME_SIZE = 20;
+
+//function prototypes
+void printIntro(void);
+void printOcean(int ocean[ROWS][COLS],char player[]);
 
 int main(void)
 {
@@ -30,16 +35,17 @@ int main(void)
 	char playerTwo[NAME_SIZE];
 
 
-
 	// array for the "Ocean"
-	int ocean[ROWS][COLS];
+	int oceanOne[ROWS][COLS];
+	int oceanTwo[ROWS][COLS];
 
 	//initialize the array with 0's
 	for(r = 0; r < ROWS; r++)
     {
         for(c = 0; c < COLS; c++)
         {
-            ocean[r][c] = 0;
+            oceanOne[r][c] = 0;
+            oceanTwo[r][c] = 0;
         }
     }
 
@@ -66,5 +72,43 @@ int main(void)
 		printf("%s will start\n", playerTwo);
 	}
 
+    printOcean(oceanOne,playerOne);
+    printf("\n\n");
+    printOcean(oceanTwo,playerTwo);
+
 	return 0;
+}
+
+void printIntro(void)
+{
+
+}
+void printOcean(int ocean[ROWS][COLS],char player[])
+{
+    int r,c;
+
+    printf("%s's Ocean\n\n",player);
+
+
+    printf("     ");
+    for(c = 0; c < COLS; c++)
+    {
+        printf(" ");
+        printf("%d",c);
+    }
+    printf("\n");
+    printf("    ======================");
+
+    for(r = 0; r < ROWS; r++)
+    {
+        printf("\n ");
+        printf("%d | ",r);
+        for(c = 0; c < COLS; c++)
+        {
+            printf(" %d",ocean[r][c]);
+        }
+        printf(" |");
+    }
+    printf("\n");
+    printf("    ======================");
 }
