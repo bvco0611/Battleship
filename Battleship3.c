@@ -80,7 +80,7 @@ int main(void)
     if (randomNumber > 5)
     {
         printf("%s will start\n", playerOne);
-        while(wone < 2 || wtwo < 2)
+        while(wone != 3 || wtwo != 3)
         {
             printf("%s FIRE!!: ", playerOne);
             scanf("%d %d", &f1, &f2);
@@ -126,7 +126,7 @@ int main(void)
     else if (randomNumber < 5)
     {
         printf("%s will start\n", playerTwo);
-        while(wone < 2 || wtwo < 2)
+        while(wone != 3 || wtwo != 3)
         {
             printf("%s FIRE!!: ", playerTwo);
             scanf("%d %d", &f1, &f2);
