@@ -21,6 +21,7 @@ int main(void)
     int wone = 0, wtwo = 0;
     int f1, f2;
     int randomNumber;
+    int bu;
     
     //should be long enough for a first name
     char playerOne[NAMESIZE];
@@ -50,9 +51,12 @@ int main(void)
     //have players place their ships
     printOcean(oceanOne,playerOne);
     placeShip(oceanOne,playerOne);
+    for(bu = 0; bu <=50; bu++)
+    printf("\n");
     printOcean(oceanTwo,playerTwo);
     placeShip(oceanTwo,playerTwo);
-
+    for(bu = 0; bu <=50; bu++)
+    printf("\n");
 
 
     //randomly select a player to start.
