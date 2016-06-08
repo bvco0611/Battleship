@@ -52,11 +52,11 @@ int main(void)
     printOcean(oceanOne,playerOne);
     placeShip(oceanOne,playerOne);
     for(bu = 0; bu <=50; bu++)
-    printf("\n");
+    	printf("\n");
     printOcean(oceanTwo,playerTwo);
     placeShip(oceanTwo,playerTwo);
     for(bu = 0; bu <=50; bu++)
-    printf("\n");
+    	printf("\n");
 
 
     //randomly select a player to start.
