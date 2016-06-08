@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "biblioteca.h"
+
 //define constants
 const int ROWS = 10;
 const int COLS = 10;
