@@ -7,11 +7,9 @@
 
 const int ROWS = 10;
 const int COLS = 10;
-const int NAME_SIZE = 20;
 const int EMPTY    = 0;  // contains water
 const int OCCUPIED = 1;  // contains a ship
-const int MISSED   = 2;  // shot into ocean
-const int HIT      = 3;  // shot and hit
+
 
 void resetOcean(int ocean[ROWS][COLS])
 {
