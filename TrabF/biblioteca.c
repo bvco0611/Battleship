@@ -7,11 +7,9 @@
 
 #define ROWS 10
 #define COLS 10
-#define NAMESIZE 20
 #define EMPTY 0 
 #define OCCUPIED 1 
-#define MISSED 2 
-#define HIT 3  
+ 
 
 void resetOcean(int ocean[ROWS][COLS]){
     int r,c;
