@@ -5,14 +5,15 @@
 
 #include "biblioteca.h"
 
-const int ROWS = 10;
-const int COLS = 10;
-const int EMPTY    = 0;  // contains water
-const int OCCUPIED = 1;  // contains a ship
+#define ROWS 10
+#define COLS 10
+#define NAMESIZE 20
+#define EMPTY 0 
+#define OCCUPIED 1 
+#define MISSED 2 
+#define HIT 3  
 
-
-void resetOcean(int ocean[ROWS][COLS])
-{
+void resetOcean(int ocean[ROWS][COLS]){
     int r,c;
     for(r = 0; r < ROWS; r++)
     {
@@ -22,8 +23,8 @@ void resetOcean(int ocean[ROWS][COLS])
         }
     }
 }
-void placeShip(int ocean[ROWS][COLS],char player[])
-{
+
+void placeShip(int ocean[ROWS][COLS],char player[]){
     //variables
     int p1a, p1b, p1c;
     int r;
@@ -102,8 +103,8 @@ void placeShip(int ocean[ROWS][COLS],char player[])
         ocean[p1c][c]=OCCUPIED;
     }
 }
-void printOcean(int ocean[ROWS][COLS],char player[])
-{
+
+void printOcean(int ocean[ROWS][COLS],char player[]){
     int r,c;
 
     printf("%s's Ocean\n\n",player);

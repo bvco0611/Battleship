@@ -5,14 +5,13 @@
 
 #include "biblioteca.h"
 
-//define constants
-const int ROWS = 10;
-const int COLS = 10;
-const int NAME_SIZE = 20;
-const int EMPTY    = 0;  // contains water
-const int OCCUPIED = 1;  // contains a ship
-const int MISSED   = 2;  // shot into ocean
-const int HIT      = 3;  // shot and hit
+#define ROWS 10
+#define COLS 10
+#define NAMESIZE 20
+#define EMPTY 0 
+#define OCCUPIED 1 
+#define MISSED 2 
+#define HIT 3
 
 
 int main(void)
@@ -25,8 +24,8 @@ int main(void)
     int randomNumber;
     
     //should be long enough for a first name
-    char playerOne[NAME_SIZE];
-    char playerTwo[NAME_SIZE];
+    char playerOne[NAMESIZE];
+    char playerTwo[NAMESIZE];
 
     // array for the "Ocean"
     int oceanOne[ROWS][COLS];
