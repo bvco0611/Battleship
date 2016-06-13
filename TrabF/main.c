@@ -159,15 +159,15 @@ int main(void)
         }
     }
 
-    if(wone == 4)
+    if(wone == 5)
     {
         printf("%s Won the Game!!\n", playerOne);
     }
-    else if(wtwo == 4)
+    else if(wtwo == 5)
     {
         printf("%s Won the Game!!\n", playerTwo);
     }
-
+    printf("1= Navio, 2= Tiro perdido, 3= Acerto\n");
 
     printOcean(oceanOne,playerOne);
     printf("\n\n");
