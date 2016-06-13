@@ -95,7 +95,7 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
             scanf("%d", &p1b);
         }
         printf("Terceira posição: ");
-        scanf("%d", &p1b);
+        scanf("%d", &p1c);
         while(p1c > 9 || p1c < 0 || p1c == p1a || p1c == p1b  || p1c < (p1b -1) || p1c > (p1b +1))
         {
             printf("Inválido. Terceira posição: ");
@@ -170,13 +170,13 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
             scanf("%d", &c2);
         }
         printf("Primeiro ponto: ");
-        scanf("%d", &p1a);
+        scanf("%d", &p2a);
 		if(c1==c2)
 		{
 			while(p2a == p1a || p2a == p1b || p2a == p1c)
 			{
 				printf("Inválido. Primeira posição: ");
-            	scanf("%d", &p1a);
+            	scanf("%d", &p2a);
 			}
 		}
 
@@ -184,7 +184,7 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
 		{
 			while(p2a > 9 || p2a < 0 ){
             printf("Inválido. Primeira posição: ");
-            scanf("%d", &p1a);
+            scanf("%d", &p2a);
 			}
 		}       
               
