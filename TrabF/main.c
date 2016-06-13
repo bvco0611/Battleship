@@ -22,7 +22,7 @@ int main(void)
     int f1, f2;
     int randomNumber;
     int bu;
-    
+
     //should be long enough for a first name
     char playerOne[NAMESIZE];
     char playerTwo[NAMESIZE];
@@ -64,8 +64,11 @@ int main(void)
     if (randomNumber > 5)
     {
         printf("%s will start\n", playerOne);
-        while(wone != 3 || wtwo != 3)
+        while(wone <= 4 || wtwo <= 4)
         {
+	    if(wone == 5 || wtwo == 5){
+	       break;
+	    }
             printf("%s FIRE!!: ", playerOne);
             scanf("%d %d", &f1, &f2);
 
@@ -110,8 +113,11 @@ int main(void)
     else if (randomNumber < 5)
     {
         printf("%s will start\n", playerTwo);
-        while(wone != 3 || wtwo != 3)
+        while(wone <= 4 || wtwo <= 4)
         {
+	    if(wone == 5 || wtwo == 5){
+	       break;
+	    }
             printf("%s FIRE!!: ", playerTwo);
             scanf("%d %d", &f1, &f2);
             while(oceanOne[f1][f2] == MISSED || oceanOne[f1][f2] == HIT)
@@ -153,11 +159,11 @@ int main(void)
         }
     }
 
-    if(wone == 3)
+    if(wone == 4)
     {
         printf("%s Won the Game!!\n", playerOne);
     }
-    else if(wtwo == 3)
+    else if(wtwo == 4)
     {
         printf("%s Won the Game!!\n", playerTwo);
     }
