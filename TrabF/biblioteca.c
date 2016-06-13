@@ -23,7 +23,7 @@ void resetOcean(int ocean[ROWS][COLS]){
 }
 
 void placeShip(int ocean[ROWS][COLS],char player[]){
-    //variables
+
     int p1a, p1b, p1c;
     int r;
     int c;
