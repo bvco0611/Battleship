@@ -64,7 +64,7 @@ int main(void)
     if (randomNumber > 5)
     {
         printf("%s will start\n", playerOne);
-        while(wone <= 4 || wtwo <= 4)
+        while(wone != 5 || wtwo != 5)
         {
 	    if(wone == 5 || wtwo == 5){
 	       break;
@@ -113,7 +113,7 @@ int main(void)
     else if (randomNumber < 5)
     {
         printf("%s will start\n", playerTwo);
-        while(wone <= 4 || wtwo <= 4)
+        while(wone != 5 || wtwo != 5)
         {
 	    if(wone == 5 || wtwo == 5){
 	       break;
