@@ -62,7 +62,7 @@ int main(void)
 	    if(wone == 5 || wtwo == 5){
 	       break;
 	    }
-            printf("%s FIRE!!: ", playerOne);
+            printf("%s FIRE (ROW)(COLUMN): ", playerOne);
             scanf("%d %d", &f1, &f2);
 
 
@@ -83,7 +83,7 @@ int main(void)
                 oceanTwo[f1][f2] = MISSED;
             }
 
-            printf("%s FIRE!!: ", playerTwo);
+            printf("%s FIRE (ROW)(COLUMN): ", playerTwo);
             scanf("%d %d", &f1, &f2);
 			if(wone == 5)
 				break;
@@ -113,7 +113,7 @@ int main(void)
 	    if(wone == 5 || wtwo == 5){
 	       break;
 	    }
-            printf("%s FIRE!!: ", playerTwo);
+            printf("%s FIRE (ROW)(COLUMN): ", playerTwo);
             scanf("%d %d", &f1, &f2);
             while(oceanOne[f1][f2] == MISSED || oceanOne[f1][f2] == HIT)
             {
@@ -132,7 +132,7 @@ int main(void)
                 oceanOne[f1][f2] = MISSED;
             }
 
-            printf("%s FIRE!!: ", playerOne);
+            printf("%s FIRE (ROW)(COLUMN): ", playerOne);
             scanf("%d %d", &f1, &f2);
 			if(wtwo == 5)
 				break;
