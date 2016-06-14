@@ -56,17 +56,17 @@ int main(void)
     randomNumber = 1 + (rand() % 10);
     if (randomNumber > 5)
     {
-        printf("Jogador %s começará.\n", playerOne);
+        printf("\n\nJogador %s começará.\n", playerOne);
         while(wone != 5 || wtwo != 5)
         {
 	    
-            printf("Jogador %s dispare (linha)(coluna): ", playerOne);
+            printf("Jogador %s dispare (linha)(coluna):\n ", playerOne);
             scanf("%d %d", &f1, &f2);
 
 
             while(oceanTwo[f1][f2] == MISSED || oceanTwo[f1][f2] == HIT)
             {
-                printf("Você já disparou nessa posição!: ");
+                printf("Você já disparou nessa posição!\n: ");
                 scanf("%d %d", &f1, &f2);
             }
             if(oceanTwo[f1][f2] == OCCUPIED)
@@ -77,16 +77,19 @@ int main(void)
             }
             else
             {
-                printf("ERROOOO.\n");
+                printf("ERROOOOU.\n");
                 oceanTwo[f1][f2] = MISSED;
             }
-
-            printf("Jogador %s dispare (linha)(coluna): ", playerTwo);
+			if(wone == 5)
+				break;
+			else
+			{
+            printf("Jogador %s dispare (linha)(coluna):\n ", playerTwo);
             scanf("%d %d", &f1, &f2);
 			
             while(oceanOne[f1][f2] == MISSED || oceanOne[f1][f2] == HIT)
             {
-                printf("Você já disparou nessa posição!: ");
+                printf("Você já disparou nessa posição!: \n");
                 scanf("%d %d", &f1, &f2);
             }
             if(oceanOne[f1][f2] == OCCUPIED)
@@ -97,22 +100,23 @@ int main(void)
             }
             else
             {
-                printf("ERROOOO.\n");
+                printf("ERROOOOU.\n");
                 oceanOne[f1][f2] = MISSED;
             }
-        }
+        	} //else caso não haja vitória
+		}
     }
     else if (randomNumber <= 5)
     {
-        printf("Jogador %s começará.\n", playerTwo);
+        printf("\n\nJogador %s começará.\n", playerTwo);
         while(wone != 5 || wtwo != 5)
         {
 	    
-            printf("Jogador %s dispare (linha)(coluna): ", playerTwo);
+            printf("Jogador %s dispare (linha)(coluna): \n ", playerTwo);
             scanf("%d %d", &f1, &f2);
             while(oceanOne[f1][f2] == MISSED || oceanOne[f1][f2] == HIT)
             {
-                printf("Você já disparou nessa posição!: ");
+                printf("Você já disparou nessa posição!:\n ");
                 scanf("%d %d", &f1, &f2);
             }
             if(oceanOne[f1][f2] == OCCUPIED)
@@ -126,13 +130,16 @@ int main(void)
                 printf("EROOOOO.\n");
                 oceanOne[f1][f2] = MISSED;
             }
-
-            printf("Jogador %s dispare (linha)(coluna): ", playerOne);
+			if(wtwo == 5)
+				break;
+			else 
+			{
+            printf("Jogador %s dispare (linha)(coluna):\n ", playerOne);
             scanf("%d %d", &f1, &f2);
 			
             while(oceanTwo[f1][f2] == MISSED || oceanTwo[f1][f2] == HIT)
             {
-                printf("Você já disparou nessa posição!: ");
+                printf("Você já disparou nessa posição!:\n ");
                 scanf("%d %d", &f1, &f2);
             }
             if(oceanTwo[f1][f2] == OCCUPIED)
@@ -146,19 +153,19 @@ int main(void)
                 printf("ERROOOO.\n");
                 oceanTwo[f1][f2] = MISSED;
             }
-
+			} //else caso não haja vitória
         }
     }
 
     if(wone == 5)
     {
-        printf("O jogador %s venceu!!\n", playerOne);
+        printf("\n \nO jogador %s venceu!!\n", playerOne);
     }
     else if(wtwo == 5)
     {
-        printf("O jogador %s venceu!!\n", playerTwo);
+        printf("\n \nO jogador %s venceu!!\n", playerTwo);
     }
-    printf("1= Navio, 2= Tiro perdido, 3= Acerto\n");
+    printf("\n1= Navio, 2= Tiro perdido, 3= Acerto\n");
 
     printOcean(oceanOne,playerOne);
     printf("\n\n");
