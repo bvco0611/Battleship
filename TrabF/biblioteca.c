@@ -6,11 +6,11 @@
 
 #define ROWS 10
 #define COLS 10
-#define EMPTY 0 
-#define OCCUPIED 1 
- 
+#define EMPTY 0
+#define OCCUPIED 1
 
-void resetOcean(int ocean[ROWS][COLS]){
+
+void resetOcean(int ocean[ROWS][COLS]) {
     int r,c;
     for(r = 0; r < ROWS; r++)
     {
@@ -21,7 +21,7 @@ void resetOcean(int ocean[ROWS][COLS]){
     }
 }
 
-void placeShip(int ocean[ROWS][COLS],char player[]){
+void placeShip(int ocean[ROWS][COLS],char player[]) {
 
     int p1a, p1b, p1c;
     int r1,r2;
@@ -31,12 +31,16 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
     int p2b;
 
 
-    
+
 
 
     printf("Jogador %s posicione seu navio de 3 posições (0-9) \n Linha(1) ou Coluna(2): ", player);
     scanf("%d", &s);
-
+    while(s != 1 && s != 2)
+    {
+        printf("Opcao invalida, digite novamente: ");
+        scanf("%d", &s);
+    }
     if(s == 1)
     {
         printf("Qual linha? (0-9): ");
@@ -106,10 +110,14 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
         ocean[p1c][c1]=OCCUPIED;
 
     }
-        
+
     printf("Jogador %s posicione seu navio de 2 posições (0-9) \n Linha(1) ou Coluna(2): ", player);
     scanf("%d", &s);
-
+    while(s != 1 && s != 2)
+    {
+        printf("Opcao invalida, digite novamente: ");
+        scanf("%d", &s);
+    }
     if(s == 1)
     {
         printf("Qual linha (0-9): ");
@@ -121,96 +129,96 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
         }
         printf("Primeira posição: ");
         scanf("%d", &p2a);
-        if(r1==r2){
-			while(p2a == p1a || p2a == p1b || p2a == p1c){
-				printf("Inválido. Primeira posição: ");
-            	scanf("%d", &p2a);
-			}
-		}
+        if(r1==r2) {
+            while(p2a == p1a || p2a == p1b || p2a == p1c) {
+                printf("Inválido. Primeira posição: ");
+                scanf("%d", &p2a);
+            }
+        }
 
-		else
-			{
-			while(p2a > 9 || p2a < 0)
-			{
-            printf("Inválido. Primeira posição posição: ");
-            scanf("%d", &p2a);
-			}
-		}
-		
-		printf("Segunda posição: ");
+        else
+        {
+            while(p2a > 9 || p2a < 0)
+            {
+                printf("Inválido. Primeira posição posição: ");
+                scanf("%d", &p2a);
+            }
+        }
+
+        printf("Segunda posição: ");
         scanf("%d", &p2b);
-		if(r1==r2)
-		{
-			while(p2b == p2a || p2b < (p2a -1) || p2b > (p2a+1) || p2b == p1a || p2b ==p1b || p2b == p1c){
-				printf("Inválido. Segunda posição: ");
-            	scanf("%d", &p2b);
-			}
-		}
+        if(r1==r2)
+        {
+            while(p2b == p2a || p2b < (p2a -1) || p2b > (p2a+1) || p2b == p1a || p2b ==p1b || p2b == p1c) {
+                printf("Inválido. Segunda posição: ");
+                scanf("%d", &p2b);
+            }
+        }
 
-		else
-		{
-			while(p2b > 9 || p2b < 0)
-			{
-            printf("Inválido. Segunda posição: ");
-            scanf("%d", &p2b);
-			}
-		}       
-           
+        else
+        {
+            while(p2b > 9 || p2b < 0)
+            {
+                printf("Inválido. Segunda posição: ");
+                scanf("%d", &p2b);
+            }
+        }
+
         ocean[r2][p2a]=OCCUPIED;
         ocean[r2][p2b]=OCCUPIED;
-        
+
     }
     else if(s == 2)
     {
         printf("Qual coluna?(0-9): ");
         scanf("%d", &c2);
-		while(c2 > 9 || c2 < 0)
+        while(c2 > 9 || c2 < 0)
         {
             printf("Inválido. Qual coluna? (0-9): ");
             scanf("%d", &c2);
         }
         printf("Primeiro ponto: ");
         scanf("%d", &p2a);
-		if(c1==c2)
-		{
-			while(p2a == p1a || p2a == p1b || p2a == p1c)
-			{
-				printf("Inválido. Primeira posição: ");
-            	scanf("%d", &p2a);
-			}
-		}
+        if(c1==c2)
+        {
+            while(p2a == p1a || p2a == p1b || p2a == p1c)
+            {
+                printf("Inválido. Primeira posição: ");
+                scanf("%d", &p2a);
+            }
+        }
 
-		else
-		{
-			while(p2a > 9 || p2a < 0 ){
-            printf("Inválido. Primeira posição: ");
-            scanf("%d", &p2a);
-			}
-		}       
-              
+        else
+        {
+            while(p2a > 9 || p2a < 0 ) {
+                printf("Inválido. Primeira posição: ");
+                scanf("%d", &p2a);
+            }
+        }
+
         printf("Segunda posição: ");
-		scanf("%d", &p2b);
+        scanf("%d", &p2b);
 
-		if(c1==c2){
-			while(p2b == p2a || p2b < (p2a -1) || p2b > (p2a+1) || p2b == p1a || p2a == p1b || p2a == p1c){
-				printf("Inválido. Primeira posição: ");
-            	scanf("%d", &p2b);
-			}
-		}
+        if(c1==c2) {
+            while(p2b == p2a || p2b < (p2a -1) || p2b > (p2a+1) || p2b == p1a || p2a == p1b || p2a == p1c) {
+                printf("Inválido. Primeira posição: ");
+                scanf("%d", &p2b);
+            }
+        }
 
-		else 
-			{
-			while(p2b > 9 || p2b < 0)
-			{
-            printf("Inválido. Primeira posição: ");
-            scanf("%d", &p2b);
-			}
-		}       
-        
-        
+        else
+        {
+            while(p2b > 9 || p2b < 0)
+            {
+                printf("Inválido. Primeira posição: ");
+                scanf("%d", &p2b);
+            }
+        }
+
+
         ocean[p2a][c2]=OCCUPIED;
         ocean[p2b][c2]=OCCUPIED;
-        
+
 
     }
 
@@ -220,7 +228,7 @@ void placeShip(int ocean[ROWS][COLS],char player[]){
 
 }
 
-void printOcean(int ocean[ROWS][COLS],char player[]){
+void printOcean(int ocean[ROWS][COLS],char player[]) {
     int r,c;
 
     printf("Oceano do jogador %s.\n\n",player);
